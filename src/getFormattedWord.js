@@ -8,4 +8,28 @@ function addString(str) {
   return str + str;
 }
 
-module.exports = { getFormattedWord, addString };
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+
+function getMax(arr) {
+  return Math.max(...arr);
+}
+
+function getActualAge(birthYear) {
+  const currentYear = new Date().getFullYear();
+  return currentYear - birthYear;
+}
+
+function findItem(arr, value) {
+  return arr.includes(value);
+}
+
+module.exports = {
+  getFormattedWord,
+  addString,
+  reverseString,
+  getMax,
+  getActualAge,
+  findItem,
+};
