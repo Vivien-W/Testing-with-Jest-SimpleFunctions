@@ -1,36 +1,47 @@
-const { getFormattedWord } = require("./getFormattedWord.js");
+const {
+  getFormattedWord,
+  addString,
+  reverseString,
+  getMax,
+  getActualAge,
+  findItem,
+} = require("./getFormattedWord.js");
 
-test("capitalizes the first letter of a word", () => {
-  expect(getFormattedWord("hello")).toBe("Hello");
-});
+describe("Utility functions", () => {
+  describe("getFormattedWord()", () => {
+    test("capitalizes the first letter of a word", () => {
+      expect(getFormattedWord("hello")).toBe("Hello");
+    });
+  });
 
-const { addString } = require("./getFormattedWord.js");
+  describe("addString()", () => {
+    test("adds string to existing string", () => {
+      expect(addString("hello")).toBe("hellohello");
+    });
+  });
 
-test("add string to existing string", () => {
-  expect(addString("hello")).toBe("hellohello");
-});
+  describe("reverseString()", () => {
+    test("reverses a string", () => {
+      expect(reverseString("hello")).toBe("olleh");
+    });
+  });
 
-const { reverseString } = require("./getFormattedWord.js");
+  describe("getMax()", () => {
+    test("returns max value in array", () => {
+      expect(getMax([1, 2, 3])).toBe(3);
+    });
+  });
 
-test("reverses a string", () => {
-  expect(reverseString("hello")).toBe("olleh");
-});
+  describe("getActualAge()", () => {
+    test("calculates age by birthyear", () => {
+      expect(getActualAge(1992)).toBe(33);
+    });
+  });
 
-const { getMax } = require("./getFormattedWord.js");
-
-test("returns max value in array", () => {
-  expect(getMax([1, 2, 3])).toBe(3);
-});
-
-const { getActualAge } = require("./getFormattedWord.js");
-
-test("calculate age by birthyear", () => {
-  expect(getActualAge(1992)).toBe(33);
-});
-
-const { findItem } = require("./getFormattedWord.js");
-
-test("find value in array", () => {
-  expect(findItem([2, 4, 6], 2)).toBe(true);
-  expect(findItem([1, 2, 4], 3)).toBe(false);
+  describe("findItem()", () => {
+    test("finds value in array", () => {
+      expect(findItem([2, 4, 6], 2)).toBe(true);
+      expect(findItem([1, 2, 4], 3)).toBe(false);
+    });
+  });
 });
